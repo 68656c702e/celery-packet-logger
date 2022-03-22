@@ -80,7 +80,7 @@ while true do
 	local bytes = rnet.nextPacket().bytes
 
 	for k,v in next, bytes do
-		t = t .. " " .. string.format("0x%02X, ", v);
+		t = t .. string.format("0x%02X, ", v);
 	end
 
 	local prefix = "UNKOWN_PACKET"
