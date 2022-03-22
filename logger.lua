@@ -76,11 +76,11 @@ local packetids = arguments[2] or {
 }
 
 while true do
-	local t = ""
+	local t = "{ "
 	local bytes = rnet.nextPacket().bytes
 
 	for k,v in next, bytes do
-		t = t .. " " .. string.format("%02X ", v);
+		t = t .. " " .. string.format("0x%02X ", v);
 	end
 
 	local prefix = "UNKOWN_PACKET"
@@ -99,6 +99,6 @@ while true do
 	end
 
 	if not Ignored[prefix] then
-		synx_env.rconsoleprint(prefix .. t .. "\n")
+		synx_env.rconsoleprint(prefix .. ": " .. t .. "}\n")
 	end
 end
