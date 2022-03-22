@@ -1,13 +1,13 @@
 local arguments = {...}
 local synx_env = _G.env or error('run getrenv()._G.env = getgenv() on synapse or another exploit that has rconsoleprint')
-local Ignored = arguments[2] or {
+local Ignored = arguments[1] or {
 	DATA_REPLIC_PING = true,
 	DATA_REPLIC_PING_BACK = true,
 	TIMESTAMP = true,
 	DATA_REPLIC_HASH = true
 }
 
-local packetids = {
+local packetids = arguments[2] or {
 	[0x00] = "CONNECTED_PING",
 	[0x01] = "UNCONNECTED_PING",
 	[0x03] = "CONNECTED_PONG",
