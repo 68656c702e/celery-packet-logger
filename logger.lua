@@ -99,6 +99,6 @@ while true do
 	end
 
 	if not Ignored[prefix] then
-		synx_env.rconsoleprint(prefix .. ": " .. t .. "}\n")
+		synx_env.rconsoleprint(prefix .. ": " .. t .. " }\n")
 	end
 end
